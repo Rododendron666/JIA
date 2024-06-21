@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>???</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .header, .footer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            color: white;
+        }
+        .footer p {
+            font-size: 0.9em;
+        }
+        .puzzle {
+            background-color: darkolivegreen;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .puzzle h2 {
+            color: white;
+        }
+        .puzzle input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .puzzle button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: red;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .puzzle button:hover {
+            background-color: orange;
+        }
+        .result {
+            color: black;
+            margin-top: 10px;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        body{
+            background-image: url('sewers.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>???</h1>
+            <p>???</p>
+        </div>
+
+        <div id="puzzle1" class="puzzle">
+            <h2>1</h2>
+            <p>Encrypted text: <strong>???</strong></p>
+            <p>Start with the trio that begins countless tales.</p>
+            <input type="text" id="input1" placeholder="Enter the correct answer">
+            <button onclick="checkAnswer1()">Check Answer</button>
+            <p id="result1"></p>
+        </div>
+
+        <div id="puzzle2" class="puzzle">
+            <h2>2</h2>
+            <p>Encrypted text: <strong>??????</strong></p>
+             <p>In twilight's grasp, a blaze unseen,
+                A harvest hue in autumn's sheen.
+                Not red nor gold, yet vivid, true,
+                What color hides in plainest view?</p>
+            <input type="text" id="input2" placeholder="Enter the correct answer">
+            <button onclick="checkAnswer2()">Check Answer</button>
+            <p id="result2"></p>
+        </div>
+
+        <div id="puzzle3" class="puzzle">
+            <h2>3</h2>
+            <p>Encrypted text: <strong>???</strong></p>
+            <p>While it has been a faithful companion.</p>
+            <input type="text" id="input3" placeholder="Enter the correct answer">
+            <button onclick="checkAnswer3()">Check Answer</button>
+            <p id="result3"></p>
+        </div>
+
+        <div id="finalPuzzle" class="puzzle">
+            <h2>!!!</h2>
+            <p>What's the answer stranger:</p>
+            <input type="text" id="finalInput" placeholder="Enter the final password">
+            <button onclick="checkFinalAnswer()">Check Answer</button>
+            <p id="finalResult"></p>
+        </div>
+
+        <div class="footer">
+            <p>&copy; JIA</p>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer1() {
+            const input = document.getElementById('input1').value.trim();
+            if (input === "The") {
+                document.getElementById('result1').textContent = "Correct!";
+                document.getElementById('result1').className = "result";
+            } else {
+                document.getElementById('result1').textContent = "Try again.";
+                document.getElementById('result1').className = "error";
+            }
+        }
+
+        function checkAnswer2() {
+            const input = document.getElementById('input2').value.trim();
+            if (input === "Orange") {
+                document.getElementById('result2').textContent = "Correct!";
+                document.getElementById('result2').className = "result";
+            } else {
+                document.getElementById('result2').textContent = "Try again.";
+                document.getElementById('result2').className = "error";
+            }
+        }
+
+        function checkAnswer3() {
+            const input = document.getElementById('input3').value.trim();
+            if (input === "Box") {
+                document.getElementById('result3').textContent = "Correct!";
+                document.getElementById('result3').className = "result";
+            } else {
+                document.getElementById('result3').textContent = "Try again.";
+                document.getElementById('result3').className = "error";
+            }
+        }
+
+        function checkFinalAnswer() {
+            const input = document.getElementById('finalInput').value.trim();
+            if (input === "The Orange Box") {
+                document.getElementById('finalResult').textContent = "Welcome.";
+                document.getElementById('finalResult').className = "result";
+            } else {
+                document.getElementById('finalResult').textContent = "Try again.";
+                document.getElementById('finalResult').className = "error";
+            }
+        }
+    </script>
+</body>
+</html>
